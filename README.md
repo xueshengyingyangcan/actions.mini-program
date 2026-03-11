@@ -71,3 +71,5 @@ robots:
   dev=6
   xxxusername=10
 ```
+
+$env:NODE_OPTIONS="--openssl-legacy-provider"; ./node_modules/.bin/ncc build src/index.ts -o dist/min -m

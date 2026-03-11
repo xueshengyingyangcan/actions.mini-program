@@ -66,19 +66,26 @@ async function run(): Promise<void> {
       uploadDir,
       // ignores,
       baseArgs: [
-        'miniprogram-ci',
+        'miniprogram-ci@2.1.26',
         ...subcommand.split(' '),
         `${actionType}`,
-        '--project-type', `${projectType}`,
-        '--pp', `${uploadDir}`,
-        '--pkp', `${privateKeyDir}`,
-        '--appid', `${MINI_APP_ID}`,
-        '--uv', `${version}`,
-        '--ud', `'${remark || pullRuestTitle || commits[0].message}'`,
-        '-r', `${robot}`,
+        '--project-type',
+        `${projectType}`,
+        '--pp',
+        `${uploadDir}`,
+        '--pkp',
+        `${privateKeyDir}`,
+        '--appid',
+        `${MINI_APP_ID}`,
+        '--uv',
+        `${version}`,
+        '--ud',
+        `'${remark || pullRuestTitle || commits[0].message}'`,
+        '-r',
+        `${robot}`,
         ...commandOptions,
-      ]
-    })
+      ],
+    });
 
     const handle: 'cloud' | 'get_dev_source_map' | 'pack_npm' | 'preview' | 'upload' | 'pack_npm_manually' | 'custom' = actionType.replace(/\-/, '_') as any;
 
