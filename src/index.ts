@@ -66,7 +66,7 @@ async function run(): Promise<void> {
       uploadDir,
       // ignores,
       baseArgs: [
-        'miniprogram-ci@1.9.15',
+        'miniprogram-ci@latest',
         ...subcommand.split(' '),
         `${actionType}`,
         '--project-type', `${projectType}`,
